@@ -1,7 +1,5 @@
 package hello.advanced.trace.logtrace;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 import hello.advanced.trace.TraceStatus;

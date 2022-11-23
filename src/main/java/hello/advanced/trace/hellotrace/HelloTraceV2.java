@@ -21,7 +21,6 @@ public class HelloTraceV2 {
 		return new TraceStatus(traceId, startTimeMs, message);
 	}
 
-
 	public TraceStatus beginSync(TraceId beforeTraceId, String message) {
 		TraceId traceId = beforeTraceId.createNextId();
 		Long startTimeMs = System.currentTimeMillis();

@@ -30,7 +30,7 @@ public class OrderRepositoryV1 {
 	}
 
 	private void sleep(int millis) {
-		try{
+		try {
 			Thread.sleep(millis);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
