@@ -2,22 +2,22 @@ package hello.advanced.trace.thredlocal;
 
 import org.junit.jupiter.api.Test;
 
-import hello.advanced.trace.thredlocal.code.FieldService;
+import hello.advanced.trace.thredlocal.code.ThreadLocalService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class FieldServiceTest {
 
-	private FieldService fieldService = new FieldService();
+	private ThreadLocalService service = new ThreadLocalService();
 
 	@Test
 	void field() throws InterruptedException {
 		log.info("main start");
 		Runnable userA = () -> {
-			fieldService.logic("userA");
+			service.logic("userA");
 		};
 		Runnable userB = () -> {
-			fieldService.logic("userB");
+			service.logic("userB");
 		};
 
 		Thread threadA = new Thread(userA);
@@ -26,7 +26,7 @@ public class FieldServiceTest {
 		threadB.setName("thread-B");
 
 		threadA.start();
-		sleep(2000);
+		// sleep(2000);
 		threadB.start();
 		sleep(3000);
 	}
